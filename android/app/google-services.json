@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353767596792",
+    "project_id": "hisandher",
+    "storage_bucket": "hisandher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353767596792:android:ed0c40cfd96f880cc1d10d",
+        "android_client_info": {
+          "package_name": "com.kzn.hisandherlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353767596792-7v5gj53h636lbe3q7qsa9pq37b2ctrsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKdh3qqtiATQR2-LgCxzMb_gFkgBGFy6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353767596792-7v5gj53h636lbe3q7qsa9pq37b2ctrsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
