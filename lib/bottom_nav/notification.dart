@@ -42,7 +42,7 @@ class _NotiState extends State<Noti> {
         iconTheme: const IconThemeData(color: Colors.indigo),
         backgroundColor: Colors.white,
         title: Center(
-          child: Text("His's and Her's New Classes  ➡️", style: TextStyle(fontWeight: FontWeight.w700,
+          child: Text("His's and Her's New Classes", style: TextStyle(fontWeight: FontWeight.w700,
               fontSize: 16.0,
               color: Colors.black
           )),
