@@ -2,11 +2,15 @@
   <library name="Gradle: com.google.android.exoplayer:exoplayer-dash:2.14.1@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a31267c2b9cb16c8c6674a974edcadc5/jetified-exoplayer-dash-2.14.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e10b9e453b80bc70f15e786230826897/jetified-exoplayer-dash-2.14.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a31267c2b9cb16c8c6674a974edcadc5/jetified-exoplayer-dash-2.14.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a31267c2b9cb16c8c6674a974edcadc5/jetified-exoplayer-dash-2.14.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a31267c2b9cb16c8c6674a974edcadc5/jetified-exoplayer-dash-2.14.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e10b9e453b80bc70f15e786230826897/jetified-exoplayer-dash-2.14.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e10b9e453b80bc70f15e786230826897/jetified-exoplayer-dash-2.14.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e10b9e453b80bc70f15e786230826897/jetified-exoplayer-dash-2.14.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kzn/bottom_nav/bankslip.dart';
 import 'package:kzn/data/models/user.dart';
 import 'package:kzn/providers/user_provider.dart';
 import 'dart:ui' as ui;
-
 import 'package:provider/provider.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'main_route.dart';
 
 class LoginRoute extends StatefulWidget {
@@ -35,44 +35,28 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             // heading
             Container(
-              height: size.height / 4,
-              //color: Colors.white,
               child: Stack(
                 children: [
                   // custom painter
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: CustomPaint(
-                      size: Size(size.width / 2, size.height / 4),
-                      // painter: CustomCardShapePainter(
-                      //     startColor: Colors.black,
-                      //     endColor: Colors.black),
-                    ),
-                  ),
-                  // app title logo
-                  // Align(
-                  //   alignment: Alignment.topRight,
-                  //   child: Container(
-                  //     width: size.width * 0.2,
-                  //     child: AppLogoWidget(),
-                  //   ),
-                  // ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      //color: Colors.green,
-                      margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
-                      width: size.width / 1.5,
+                  Container(
+                    //color: Colors.green,
+                    width: 120,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 30),
                       child: Image(
                         image: AssetImage('assets/images/appicon.png'),
                         fit: BoxFit.fitHeight,
-
                       ),
                     ),
                   ),
@@ -84,7 +68,7 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
               children: [
                 // username input
                 Padding(
-                  padding: EdgeInsets.all(24),
+                  padding: EdgeInsets.only(left: 24, right: 24, bottom: 24),
                   child: Container(
                     decoration: BoxDecoration(
                       //border: Border.all(color: Colors.white)
@@ -187,7 +171,8 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                         ),
                         child: MaterialButton(
                           child: Text('Login',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white,
+                              fontWeight: FontWeight.bold,),
                           ),
 
                         ),
@@ -195,24 +180,10 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                     ),
                   ),
                 ),
-                // forget password text link
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Builder(
-                    builder:(context) => InkWell(
-                      onTap: (){
-                        print('Forget Password onTap');
-                        forgetPassword(context);
-                      },
-                      child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Text('Forget Password ?' , style: TextStyle(fontWeight: FontWeight.bold),)),
-                    ),
-                  ),
-                )
               ],
             ),
-            SizedBox(height: 50,),
+
+            SizedBox(height: 30),
             // don't have an account, register here
             Container(
               //height: size.height /6,
@@ -221,19 +192,33 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
-                  Builder(
-                    builder:(context) => InkWell(
-                      onTap: (){
-                        print('register onTap');
-                        registerAccount(context);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Register Here",style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                    ),
+                  ElevatedButton.icon(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),),
+                    icon: Icon(
+                        Icons.school_outlined, color: Colors.black),
+                    label: Text('Contact Us', style: const TextStyle(fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),),
+                    onPressed: () async {
+                      {Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => BankSlip()),);}
+                    },
                   ),
+
+                  SizedBox(width: 50),
+
+                  ElevatedButton.icon(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),),
+                    icon: Icon(
+                        Icons.phone_outlined, color: Colors.black),
+                    label: Text('Call to Admin', style: const TextStyle(fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),),
+                    onPressed: () => launch("tel://09967906768"),
+                  ),
+
                 ],
               ),
             ),
@@ -243,13 +228,21 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
           ],
         ),
       ),
+
     );
   }
 
   void forgetPassword(BuildContext context){
     print('forgetPassword is called');
     Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text("📞 to reset password, please contact to admin."),
+      backgroundColor: Colors.white,
+      content: TextButton.icon(
+        icon: Icon(Icons.phone, color: Colors.black),
+        label: Text('Contact Us', style: const TextStyle(fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black),),
+        onPressed: () => launch("tel://09967906768"),
+      ),
     ));
   }
   void registerAccount(BuildContext context){
@@ -257,7 +250,17 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
 
 
     Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text("📞 to register account, please contact to admin."),
+      backgroundColor: Colors.white,
+      content: TextButton.icon(
+        icon: Icon(Icons.phone, color: Colors.black),
+        label: Text('Enroll Now', style: const TextStyle(fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black),),
+        onPressed: () async {
+          {Navigator.push(
+            context, MaterialPageRoute(builder: (context) => BankSlip()),);}
+        },
+      ),
     ));
 
     // Navigator.pushNamed(context, SignUpRoute.routeName);

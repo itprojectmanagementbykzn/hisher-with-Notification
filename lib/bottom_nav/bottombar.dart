@@ -53,7 +53,7 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(icon: Icon(Icons.ondemand_video), label: 'Vlog'),
           BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Courses'),
           BottomNavigationBarItem(icon: Icon(Icons.image), label: 'Album'),
-          BottomNavigationBarItem(label: 'Coming Classes',
+          BottomNavigationBarItem(label: 'Update',
           icon: Stack(children: <Widget>[
           Icon(Icons.doorbell),
             new Positioned(

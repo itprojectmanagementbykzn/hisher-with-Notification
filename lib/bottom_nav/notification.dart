@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:kzn/providers/blog_provider.dart';
 import 'package:provider/provider.dart';
+import 'bankslip.dart';
+import 'newclass_enrollbutton.dart';
 import 'post.dart';
 
 String url ='https://hisandhermyanmar-95b62f.ingress-erytho.easywp.com';
@@ -42,11 +44,45 @@ class _NotiState extends State<Noti> {
         iconTheme: const IconThemeData(color: Colors.indigo),
         backgroundColor: Colors.white,
         title: Center(
-          child: Text("His's and Her's New Classes", style: TextStyle(fontWeight: FontWeight.w700,
+          child: Text("His's and Her's Update", style: TextStyle(fontWeight: FontWeight.w700,
               fontSize: 16.0,
               color: Colors.black
           )),
         ),
+          actions: [
+            Container(
+              margin: EdgeInsets.only(
+                top: 7,
+                bottom: 10,
+                right: 15,
+              ),
+              width: 90,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  alignment: Alignment.center,
+                  padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+                  overlayColor: MaterialStateProperty.all(Colors.black12),
+                ),
+                onPressed: () async {
+                  {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BankSlip()),
+                  );
+                  }
+                },
+                child: Text("Contact Us", style: TextStyle(fontWeight: FontWeight.w700,
+                    fontSize: 14.0,
+                    color: Colors.black
+                )),
+              ),
+            ),
+
+          ]
       ),
 
       body: Padding(
@@ -107,7 +143,7 @@ class _PostTileState extends State<PostTile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Post(
+        Navigator.push(context, MaterialPageRoute(builder: (context) => NewClassEnroll(
           desc: widget.content,
           imageUrl: widget.imageUrl,
           title: widget.title,

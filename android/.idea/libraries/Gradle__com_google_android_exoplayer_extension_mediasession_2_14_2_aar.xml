@@ -2,11 +2,15 @@
   <library name="Gradle: com.google.android.exoplayer:extension-mediasession:2.14.2@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13a8fb18c650ff5cf3e6d5d8dc1cdfde/jetified-extension-mediasession-2.14.2/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d44c49552fe32041a564e897f18266/jetified-extension-mediasession-2.14.2/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13a8fb18c650ff5cf3e6d5d8dc1cdfde/jetified-extension-mediasession-2.14.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13a8fb18c650ff5cf3e6d5d8dc1cdfde/jetified-extension-mediasession-2.14.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13a8fb18c650ff5cf3e6d5d8dc1cdfde/jetified-extension-mediasession-2.14.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d44c49552fe32041a564e897f18266/jetified-extension-mediasession-2.14.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d44c49552fe32041a564e897f18266/jetified-extension-mediasession-2.14.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d44c49552fe32041a564e897f18266/jetified-extension-mediasession-2.14.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
